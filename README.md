@@ -13,7 +13,13 @@ LinkBox is a lightweight and responsive React-based web app that lets users save
 - Minimal responsive UI (Tailwind CSS)
 
 ---
+## 📸 Screenshot
 
+Here’s a preview of the extension in action:
+
+![TodoList Extension Screenshot](https://github.com/hellman53/LinkBox/blob/1f906233c09c5b8f40f69104916864f000076eb9/snapshot.png)
+
+---
 ## 🛠️ Getting Started
 
 ### 1. **Clone the Repository**
