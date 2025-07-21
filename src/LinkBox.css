@@ -1,0 +1,51 @@
+button {
+  border-radius: 4px;
+  border: 2px solid transparent;
+  padding: 7px 14px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: inherit;
+  background-color: #4c4c4c;
+  cursor: pointer;
+  transition-property: color, border-color, background-color;
+  transition-duration: 0.35s;
+  /* transition-timing-function: ease-out; */
+}
+button:hover {
+  color: #4c4c4c;
+  background-color: #f5f5f5;
+  border-color: #4c4c4c;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.del-btn{
+    color: #4c4c4c;
+    border-color: #4c4c4c;
+    background-color: #f5f5f5 ;
+    transition-property: color, border-color, background-color;
+    transition-duration: 0.35s;
+}
+.del-btn:hover{
+    color: #f5f5f5;
+    border-color: #4c4c4c;
+    background-color: #4c4c4c;
+}
+.util{
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+    background-color: #f5f5f5;
+    border:none;
+}
+.wrapper{
+  scrollbar-width: 4px;
+
+}
+.header{
+  display: flex;
+  align-items: center ;
+  margin-bottom: 10px;
+}

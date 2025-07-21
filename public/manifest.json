@@ -1,0 +1,27 @@
+
+
+{
+  "manifest_version": 3,
+  "name": "LinkBox",
+  "description": "Quickly save and revisit your favorite or important links.",
+  "version": "1.0",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "LinkBox",
+    "default_icon": {
+      "16": "open-in-browser.png"
+     
+    }
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "icons": {
+    "16": "open-in-browser.png"
+   
+  }
+}
