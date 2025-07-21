@@ -1,4 +1,4 @@
-# 🔗 LinkBox – A Simple Bookmark Manager (React + Tailwind) Browser Extension
+# 🔗 LinkBox – A Simple Links Saver Browser Extension
 
 LinkBox is a lightweight and responsive React-based web app that lets users save, copy, and manage URLs easily in their browser. It uses `localStorage` for data persistence and includes Chrome Extension support to save the current active tab.
 
