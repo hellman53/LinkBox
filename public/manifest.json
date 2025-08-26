@@ -1,19 +1,27 @@
+
+
 {
   "manifest_version": 3,
-  "name": "React Expense Tracker",
+  "name": "LinkBox",
+  "description": "Quickly save and revisit your favorite or important links.",
   "version": "1.0",
-  "description": "A simple expense tracker built with React.",
   "action": {
     "default_popup": "index.html",
-    "default_title": "React Expense Tracker",
-    "default_icon": "icon.png"
-  },
-  "icons": {
-    "16": "icon.png",
-    "48": "icon.png",
-    "128": "icon.png"
+    "default_title": "LinkBox",
+    "default_icon": {
+      "16": "open-in-browser.png"
+     
+    }
   },
   "permissions": [
+    "tabs",
     "storage"
-  ]
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "icons": {
+    "16": "open-in-browser.png"
+   
+  }
 }

@@ -1,90 +1,84 @@
-import React, { useState, useEffect } from 'react';
-import './ExpenseTracker.css';
+# 🔗 LinkBox – A Simple Bookmark Manager (React + Tailwind)
 
-const App = () => {
-  // Initialize state with data from localStorage
-  const [expenses, setExpenses] = useState(() => {
-    const savedExpenses = localStorage.getItem('expenses');
-    return savedExpenses ? JSON.parse(savedExpenses) : [];
-  });
-  const [description, setDescription] = useState('');
-  const [amount, setAmount] = useState('');
+LinkBox is a lightweight and responsive React-based web app that lets users save, copy, and manage URLs easily in their browser. It uses `localStorage` for data persistence and includes Chrome Extension support to save the current active tab.
 
-  // Use a useEffect hook to save expenses to localStorage whenever they change
-  useEffect(() => {
-    localStorage.setItem('expenses', JSON.stringify(expenses));
-  }, [expenses]);
+---
 
-  const handleAddExpense = (e) => {
-    e.preventDefault();
+## 🚀 Features
 
-    if (!description || !amount) {
-      alert('Please enter a description and amount.');
-      return;
-    }
+- Save links manually or via current tab (for extensions)
+- Copy links to clipboard
+- Delete individual or all links
+- Persistent `localStorage` storage
+- Minimal responsive UI (Tailwind CSS)
 
-    const newExpense = {
-      id: Date.now(),
-      description: description,
-      amount: parseFloat(amount),
-      date: new Date().toLocaleDateString(),
-    };
+---
 
-    setExpenses([newExpense,...expenses]);
-    setDescription('');
-    setAmount('');
-  };
+## 🛠️ Getting Started
 
-  const handleDeleteExpense = (id) => {
-    setExpenses(expenses.filter(expense => expense.id !== id));
-  };
+### 1. **Clone the Repository**
+```bash
+git clone https://github.com/your-username/LinkBox.git
+cd LinkBox
+```
 
-  return (
-    <div className="expense-tracker-container">
-      <h2>💸 Expense Tracker</h2>
-      <form onSubmit={handleAddExpense} className="expense-form">
-        <input
-          type="text"
-          placeholder="Expense Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="Amount"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        />
-        <button type="submit">Add Expense</button>
-      </form>
+2. Install Node Modules
+Make sure you have Node.js installed.
 
-      <div className="expenses-list-container">
-        <h3>📝 Expenses List</h3>
-        {expenses.length === 0 ? (
-          <p>No expenses added yet.</p>
-        ) : (
-          <ul className="expenses-list">
-            {expenses.map((expense) => (
-              <li key={expense.id} className="expense-item">
-                <div>
-                  <span className="expense-date">{expense.date}</span>
-                  <span className="expense-description">{expense.description}</span>
-                  <span className="expense-amount">₹{expense.amount.toFixed(2)}</span>
-                </div>
-                <button onClick={() => handleDeleteExpense(expense.id)}>❌</button>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+Then install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
 
-      <div className="total-expenses">
-        <h3>📊 Total Expenses:
-          <span>₹{expenses.reduce((total, expense) => total + expense.amount, 0).toFixed(2)}</span>
-        </h3>
-      </div>
-    </div>
-  );
-};
+💻 Run the Project in Development
+To run the React app locally:
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
+This will start the app on http://localhost:5173 by default (if you're using Vite).
 
-export default App;
+📦 Build for Production
+To generate a production build (for deployment or Chrome extension packaging):
+```bash
+npm run build
+# or
+yarn build
+# or
+pnpm build
+```
+This will generate a dist/ folder containing the build output.
+
+🧩 Load as Chrome/Brave Extension
+To load the extension in Chrome or Brave, follow these steps:
+1. Go to chrome://extensions/ (or brave://extensions/ for Brave).
+2. Enable Developer Mode.
+3. Click "Load unpacked".
+4. Select the dist/ folder.
+5. The extension should now be loaded and visible in the browser.
+6. You can also load the extension directly from the `manifest.json` file by clicking the "Load unpacked" button and selecting the `manifest.json` file.
+7. To update the extension, simply reload the extension by clicking the reload button in the extensions pag
+8. To remove the extension, click the "Remove" button in the extensions page.
+9. To load the extension in a different browser, follow the same steps as above.
+
+📁 Folder Structure
+The project follows a standard structure:
+``` bash
+src/
+  ├── components/
+  │   └── LinkBox.jsx
+  ├── App.jsx
+  ├── main.jsx
+  └── index.css
+```
+
+📌 Notes
+1. chrome.tabs API only works when run inside an actual extension
+2. Links are saved using the browser’s localStorage and are persistent across sessions
