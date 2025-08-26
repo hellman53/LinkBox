@@ -1,0 +1,171 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.expense-tracker-container {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  min-height: 400px;
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.expense-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.expense-form input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #eee;
+  color: black;
+}
+
+.expense-form input:focus {
+  outline: none;
+  border-color: #5c67f2;
+}
+
+.expense-form button {
+  padding: 12px 20px;
+  background-color: #5c67f2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.expense-form button:hover {
+  background-color: #4b55e0;
+}
+
+.expenses-list-container {
+  text-align: left;
+  margin-bottom: 20px;
+  height: 250px;
+  overflow-y: auto;
+  /* Add these two lines for smooth scrolling */
+  scroll-behavior: smooth;
+}
+
+/* Styles for a thin scrollbar (Webkit-based browsers like Chrome, Safari) */
+.expenses-list-container::-webkit-scrollbar {
+  width: 8px; /* makes the scrollbar thin */
+}
+
+.expenses-list-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.expenses-list-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.expenses-list-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.expenses-list-container h3 {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.expenses-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.expense-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.expense-item div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.expense-date {
+  color: #888;
+  font-size: 14px;
+}
+
+.expense-description {
+  font-weight: bold;
+  color: #333;
+  flex: 1;
+}
+
+.expense-amount {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.expense-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.expense-item button:hover {
+  transform: scale(1.1);
+}
+
+.total-expenses {
+  text-align: left;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.total-expenses h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+}
+
+.total-expenses span {
+  font-size: 24px;
+  font-weight: bold;
+  color: #27ae60;
+}
