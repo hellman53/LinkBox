@@ -4,6 +4,14 @@ LinkBox is a lightweight and responsive React-based web app that lets users save
 
 ---
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="https://github.com/hellman53/LinkBox/blob/a0ea88db0125982c0f9c17803a45e1ddc4d9e54e/Screenshot%202025-09-20%20121923.png" alt="Preview" width="600"/>
+</p>
+
+---
+
 ## 🚀 Features
 
 - Save links manually or via current tab (for extensions)
